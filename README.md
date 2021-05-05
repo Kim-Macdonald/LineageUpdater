@@ -11,11 +11,13 @@ The script will:
 (example data only, to show VoCcaller output)
 
 
-2. It will </b>merge the 2 output files to update the Runs_CombinedQCsummary.xlsx with the Newest lineages for all samples</b> (lineage, note, pangoLEARN version, pangolin version columns) from the [date]_pangolin_lineages.csv file. 
-
 ![image](https://user-images.githubusercontent.com/72042148/117081476-cd391500-acf4-11eb-9f3a-e26a31dc75f1.png)
 
 (example data only, to show pangolin pipeline output)
+
+
+2. It will </b>merge the 2 output files to update the Runs_CombinedQCsummary.xlsx with the Newest lineages for all samples</b> (lineage, note, pangoLEARN version, pangolin version columns) from the [date]_pangolin_lineages.csv file. 
+
 
 
 3. It will <b>re-call VoCs/VUIs based on the new lineages.</b> 
