@@ -4,7 +4,7 @@ Merge the QC summary (product of mergeQCresults_plusMissing then VoCcaller, save
 
 The script will: 
 
-1. Read in the output file(s) of VoCcaller (single file or merged output file (instructions below)) and https://github.com/BCCDC-PHL/pangolin-nf (an updated version of pangolin that's run on all data in the covid sequence directory - output file is called [date]_pangolin_lineages.csv). 
+1. <b>Read</b> in the output file(s) of VoCcaller (single file or merged output file (instructions below)) and https://github.com/BCCDC-PHL/pangolin-nf (an updated version of pangolin that's run on all data in the covid sequence directory - output file is called [date]_pangolin_lineages.csv). 
 
 ![image](https://user-images.githubusercontent.com/72042148/117079561-dcb65f00-acf0-11eb-826c-2b0b07cdd9f1.png)
 
@@ -18,13 +18,20 @@ The script will:
 (example data only, to show pangolin pipeline output)
 
 
-2. It will </b>merge the 2 output files to update the Runs_CombinedQCsummary.xlsx with the Newest lineages for all samples</b> (lineage, note, pangoLEARN version, pangolin version columns) from the [date]_pangolin_lineages.csv file. 
+2. <b>Split the FastqID</b> in sample (QCsummary) and sample_id (lineages file) columns in each file. (Assuming your fastqs are named like: A1234567890-201-D-E03 (split by dashes))
+
+3. Create a <b>new column</b> in each table (QCsummary and lineages) called <b>SampleID_RunID</b>. (the sample and run_name columns concatenated to create a unique sample ID. This will allow repeats of the same sampleID/CID to be processed individually)
+
+4. <b>Sort and remove duplicates</b> (based on SampleID_RunID column in each)
+ 
+ 
+3. <b>Merge</b> the 2 output files to update the Runs_CombinedQCsummary.xlsx with the <b>Newest lineages</b> and other relevant columns for all samples (lineage, note, pangoLEARN version, pangolin version columns) from the [date]_pangolin_lineages.csv file. 
 
 
 
-3. It will <b>re-call VoCs/VUIs based on the new lineages.</b> 
+4. <b>Re-call VoCs/VUIs based on the new lineages.</b> 
 
-4. It will save an output file with today's date, to a location you specify in the script. 
+5. <b>Save</b> an output file with today's date, to a location you specify in the script. 
 
 ![image](https://user-images.githubusercontent.com/72042148/117085402-7d5f4b80-acfe-11eb-99f1-98ce120d9ae9.png)
 
