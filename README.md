@@ -99,7 +99,7 @@ You May also want to add a date to the beginning or end of the output file (e.g.
 
     header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal.csv) > Runs_CombinedQCsummary.csv
 
-3. <b>Transfer the Runs_CombinedQCsummary.csv output file for each run from the server to your PC (e.g. via Cyberduck, FileZilla, etc).</b>
+3. <b>Transfer the Runs_CombinedQCsummary.csv output file from the server to your PC (e.g. via Cyberduck, FileZilla, etc).</b>
 
 4. Open the Runs_CombinedQCsummary.csv file and Save As .xlsx (or change the input file extension to .csv in the LineageUpdater script, and use read_csv instead of read_excel).
 
