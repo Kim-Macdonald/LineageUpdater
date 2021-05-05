@@ -10,6 +10,8 @@ The script will:
 
 (example data only, to show VoCcaller output)
 
+(click on image to view in new window, then click to zoom, and scroll to see entire table)
+
 
 ![image](https://user-images.githubusercontent.com/72042148/117081476-cd391500-acf4-11eb-9f3a-e26a31dc75f1.png)
 
