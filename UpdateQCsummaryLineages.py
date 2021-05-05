@@ -60,7 +60,7 @@ df_QCsummary0['sample'] = np.select(conditions, choices, default= df_QCsummary0[
 #print(df_QCsummary0['sample'])  #correct
 
 # Replace contents of SampleID_RunID with the concatenated field values
-SampleID_RunID_qc = (df_QCsummary0["sample"].astype(str)) + '_' + (df_QCsummary0["run_me"].astype(str))
+SampleID_RunID_qc = (df_QCsummary0["sample"].astype(str)) + '_' + (df_QCsummary0["run_name"].astype(str))
 #print(SampleID_RunID_qc)    #correct
 
 # Create New Column for, and Combine, SampleID_RunID:
