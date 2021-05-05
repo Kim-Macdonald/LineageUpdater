@@ -109,7 +109,7 @@ Assuming you've run this pipeline: https://github.com/BCCDC-PHL/pangolin-nf (or 
 
 And produced an output file that looks like: [date]_pangolin_lineages.csv
 
-1. Transfer the file (saved in pangolin-nf-v0.0-output directory, within the [MiSeqRunID] directory.
+1. Transfer the file (saved in pangolin-nf-v0.0-output directory, within the [MiSeqRunID] directory).
 
 
 ### Run LineageUpdater Script (on PC):
