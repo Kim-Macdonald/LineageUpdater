@@ -89,15 +89,15 @@ You may need to merge the output for multiple runs, to keep a file for all runs 
 
 (replace "Runs1-145" in the output file with whatever makes sense for your runs)
 
-    cat ./*/*_MissingPlus_QC_lineage_VoC_OrderedFinal_RunNum.csv > Runs1-145_combined_QC_lineage_VoC_OrderedFinal.csv
+    cat ./*/*_MissingPlus_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv > Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv
 
 2. Remove the header rows from all the files except the first: (replace both instances of "Runs1-145" below with whatever you used in your output file above)
 
-You May also want to add a date to the beginning or end of the output file (e.g. Runs_CombinedQCsummary_[date].csv ) 
+You May also want to add a date to the beginning or end of the output file in the command below (e.g. Runs_CombinedQCsummary_[date].csv ) 
 
 (if you add a date, you may need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file)
 
-    header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal.csv) > Runs_CombinedQCsummary.csv
+    header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv) > Runs_CombinedQCsummary.csv
 
 3. <b>Transfer the Runs_CombinedQCsummary.csv output file from the server to your PC (e.g. via Cyberduck, FileZilla, etc).</b>
 
