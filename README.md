@@ -73,9 +73,9 @@ Save the LineageUpdater script on your PC. Install Anaconda Navigator.
 
 ### Create QC Summary file:
 
-1. Run mergeQCresults_plusMissing.py on the server, as per mergeQCresults_plusMissing.py instructions (https://github.com/Kim-Macdonald/mergeQCresults_plusMissing )
+1. Run mergeQCresults_plusMissing.py on the server, as per mergeQCresults_plusMissing.py instructions (https://github.com/Kim-Macdonald/mergeQCresults_plusMissing ). (Command is below)
 
-2. Then run VoCcaller script (Both are combined in command below), as per VoCcaller instructions (https://github.com/Kim-Macdonald/VoCcaller ) 
+2. Then run VoCcaller script (Command is combined with Step 1's command, in commands shown below), as per VoCcaller instructions (https://github.com/Kim-Macdonald/VoCcaller ) 
 
 (replace [MiSeqRunID] with your MiSeqRunID/RunName or Directory for the sequencing run of interest):
 
