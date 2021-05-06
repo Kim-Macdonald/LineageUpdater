@@ -91,7 +91,7 @@ The output file of interest is ([MiSeqRunID]_MissingPlus_QC_lineage_VoC_OrderedF
 
 ### Merge Output for multiple runs:
 
-You may need to merge the output for multiple runs, to keep a file for all runs to-date:
+You may want to merge the output for multiple runs, to keep a file for all runs to-date (I recommend doing this):
 
 
 1. <b>Navigate to the analysis directory</b> (1 level above your run directories - e.g. if your runs are in /Path/to/analysis/[MiSeqRunID] then cd to /Path/to/analysis/ )
