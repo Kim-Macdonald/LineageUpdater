@@ -22,7 +22,7 @@ The script will:
 
 3. Create a <b>new column</b> in each table (QCsummary and lineages) called <b>SampleID_RunID</b>. (the sample and run_name columns concatenated to create a unique sample ID. This will allow repeats of the same sampleID/CID to be processed individually)
 
-4. <b>Sort and remove duplicates</b> (based on SampleID_RunID column in each)
+4. <b>Sort and remove duplicates</b> (based on SampleID_RunID column in each) - keep last/latest duplicate (if you're repeating a sample, it's likely b/c the first failed).
  
  
 3. <b>Merge</b> the 2 output files to update the Runs_CombinedQCsummary.xlsx with the <b>Newest lineages</b> and other relevant columns for all samples (lineage, note, pangoLEARN version, pangolin version columns) from the [date]_pangolin_lineages.csv file. 
