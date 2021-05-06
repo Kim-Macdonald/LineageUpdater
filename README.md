@@ -128,7 +128,7 @@ Assuming you've run this pipeline: https://github.com/BCCDC-PHL/pangolin-nf (or 
 
 And produced an output file that looks like: [date]_pangolin_lineages.csv
 
-1. <b>Transfer the file</b> (saved in pangolin-nf-v0.0-output directory, within the [MiSeqRunID] directory) to your PC from the server (e.g. via Cyberduck, FileZilla, etc).
+1. <b>Transfer the file</b> (saved in pangolin-nf-v0.1-output directory, within the [MiSeqRunID] directory) to your PC from the server (e.g. via Cyberduck, FileZilla, etc).
 
 
 ### Run LineageUpdater Script (on PC):
