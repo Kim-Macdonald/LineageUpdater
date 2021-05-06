@@ -104,7 +104,7 @@ You may want to merge the output for multiple runs, to keep a file for all runs 
 
        header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv) > Runs_CombinedQCsummary.csv
     
-  You May also want to add a date to the beginning or end of the output file in the command above (e.g. Runs_CombinedQCsummary_[date].csv ) 
+  You May also want to add a date to the beginning or end of the output file in the command above (e.g. Runs_CombinedQCsummary_[date].csv) 
 
   (if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 28 with all these lines:) 
 
