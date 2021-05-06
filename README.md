@@ -133,7 +133,7 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 ### Run LineageUpdater Script (on PC):
 
-1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up.
+1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up. (lines 28, 87, 274)
 
 2. <b>Launch Spyder</b>, or other IDE on your PC. 
 
