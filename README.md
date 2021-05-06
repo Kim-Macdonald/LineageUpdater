@@ -77,7 +77,7 @@ Save the LineageUpdater script on your PC. Install Anaconda Navigator.
 
 2. Then run VoCcaller script (Command is combined with Step 1's command, in commands shown below), as per VoCcaller instructions (https://github.com/Kim-Macdonald/VoCcaller ) 
 
-(replace [MiSeqRunID] with your MiSeqRunID/RunName or Directory for the sequencing run of interest):
+ (replace [MiSeqRunID] with your MiSeqRunID/RunName or Directory for the sequencing run of interest):
 
     cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing.py; python3 path/to/addVoCcalls_RunNum_v2.py; conda deactivate
 
@@ -104,9 +104,9 @@ You may want to merge the output for multiple runs, to keep a file for all runs 
 
        header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv) > Runs_CombinedQCsummary.csv
     
-You May also want to add a date to the beginning or end of the output file in the command below (e.g. Runs_CombinedQCsummary_[date].csv ) 
+  You May also want to add a date to the beginning or end of the output file in the command above (e.g. Runs_CombinedQCsummary_[date].csv ) 
 
-(if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 28 with all these lines:) 
+  (if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 28 with all these lines:) 
 
     file1Path = os.path.dirname('C:/Path/to/QCsummaryFile/')
 
@@ -143,7 +143,7 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 5. Use this file to report the newest lineages, summarize updated VoC/VUI data, trends, etc. 
 
-(e.g. link output file (or the folder it's in, to take the newest one each refresh) to a dashboard, to summarize data for reports, etc.
+  (e.g. link output file (or the folder it's in, to take the newest one each refresh) to a dashboard, to summarize data for reports, etc.
 
 
 
