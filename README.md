@@ -94,13 +94,13 @@ The output file of interest is ([MiSeqRunID]_MissingPlus_QC_lineage_VoC_OrderedF
 You may need to merge the output for multiple runs, to keep a file for all runs to-date:
 
 
-1. Navigate to the analysis directory (1 level above your run directories - e.g. if your runs are in /Path/to/analysis/[MiSeqRunID] then cd to /Path/to/analysis/ )
+1. <b>Navigate to the analysis directory</b> (1 level above your run directories - e.g. if your runs are in /Path/to/analysis/[MiSeqRunID] then cd to /Path/to/analysis/ )
 
-(replace "Runs1-145" in the output file with whatever makes sense for your runs)
+2. <b>Merge the files for each run into 1</b> (replace "Runs1-145" in the output file with whatever makes sense for your runs)
+  
+       cat ./*/*_MissingPlus_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv > Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv
 
-    cat ./*/*_MissingPlus_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv > Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv
-
-2. Remove the header rows from all the files except the first: (replace both instances of "Runs1-145" below with whatever you used in your output file above)
+3. <b>Remove the header rows</b> from all the files except the first: (replace both instances of "Runs1-145" below with whatever you used in your output file above)
 
 You May also want to add a date to the beginning or end of the output file in the command below (e.g. Runs_CombinedQCsummary_[date].csv ) 
 
@@ -108,9 +108,9 @@ You May also want to add a date to the beginning or end of the output file in th
 
     header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv) > Runs_CombinedQCsummary.csv
 
-3. <b>Transfer the Runs_CombinedQCsummary.csv output file from the server to your PC (e.g. via Cyberduck, FileZilla, etc).</b>
+4. <b>Transfer the Runs_CombinedQCsummary.csv output file to your PC</b> from the server (e.g. via Cyberduck, FileZilla, etc).
 
-4. Open the Runs_CombinedQCsummary.csv file and Save As .xlsx (or change the input file extension to .csv in the LineageUpdater script, and use read_csv instead of read_excel).
+5. Open the Runs_CombinedQCsummary.csv file and <b>Save As .xlsx</b> (or change the input file extension to .csv in the LineageUpdater script, and use read_csv instead of read_excel).
 
 
 ### Transfer the Updated Lineages file (From pangolin pipeline)
@@ -123,11 +123,11 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 ### Run LineageUpdater Script (on PC):
 
-1. Update paths to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up.
+1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up.
 
-2. Launch Spyder, or other IDE on your PC. 
+2. <b>Launch Spyder</b>, or other IDE on your PC. 
 
-3. Open and run script in Spyder on your PC.
+3. Open and <b>run script</b> in Spyder on your PC.
 
 4. The file should appear in the folder you specified for saving (at end of LineageUpdater script).
 
