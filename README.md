@@ -82,9 +82,9 @@ Save the LineageUpdater script on your PC. Install Anaconda Navigator.
     cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing.py; python3 path/to/addVoCcalls_RunNum_v2.py; conda deactivate
 
 
-    OR for artic v1.3 and ncov-tools v1.5:
+    OR for artic v1.3 and ncov-tools v1.5 (and pangolin v2.4.2 output):
 
-    cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing_v5.py; python3 path/to/addVoCcalls_RunNum_v2.py; conda deactivate
+    cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing_v5b.py; python3 path/to/addVoCcalls_RunNum_v2.py; conda deactivate
 
 The output file of interest is ([MiSeqRunID]_MissingPlus_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv ).
 
