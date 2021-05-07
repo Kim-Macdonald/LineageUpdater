@@ -108,14 +108,15 @@ You may want to merge the output for multiple runs, to keep a file for all runs 
 
   (if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 28 with all these lines:) 
 
-    file1Path = os.path.dirname('C:/Path/to/QCsummaryFile/')
+    ~~~python
 
-    for file in os.listdir(file1Path):
-        if fnmatch.fnmatch(file, 'Runs_CombinedQCsummary*.xlsx'):
-            print(file)
-            df_QCsummary0 = pd.read_excel(file, sheet_name=0)
-
-
+    path1 = "C:/Path/to/QCsummaryFile/Runs_CombinedQCsummary*.xlsx"
+    
+    for filename in glob.glob(path1):
+        with open(filename, 'r') as f:
+            print(f)
+            df_QCsummary0 = pd.read_excel(f, sheet_name=0)
+    ~~~
 
 
 4. <b>Transfer the Runs_CombinedQCsummary.csv output file to your PC</b> from the server (e.g. via Cyberduck, FileZilla, etc).
