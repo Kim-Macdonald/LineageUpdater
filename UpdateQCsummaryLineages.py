@@ -84,13 +84,16 @@ df_QCsummary0 = df_QCsummary0.drop_duplicates(subset=['SampleID_RunID'], keep='l
 
 # Read in Updated Pangolin lineages file: (transfer from server to folder below, so you can read it in on your PC)
 # File produced on server from pangolin pipeline, that runs newest version on all sequence data in COVID directory on server, will have name: [date]_pangolin_lineages.csv )
-file2Path = os.path.dirname('S:/PathOnly/To/UpdatedLineage/File/')
-    
-for file in os.listdir(file2Path):
-    if fnmatch.fnmatch(file, '*_pangolin_lineages.csv'):
-        print(file)
-        df_lineages0 = pd.read_csv(file)
+path = "S:/PathOnly/To/UpdatedLineage/File/*_pangolin_lineages.csv"
 
+for filename in glob.glob(path):
+    with open(filename, 'r') as f:
+        print(f)
+        df_lineages0a = pd.read_csv(f)
+
+# Set order of columns in lineage file, so are always compatible with lines below:
+df_lineages0 = df_lineages0a[['run_id', 'sample_id', 'genome_completeness', 'genome_completness_status', 'lineage', 'conflict', 'pangoLEARN_version', 'pangolin_version', 'pango_version', 'status', 'note']]
+ 
 
 # Parse SampleID out of new sampleIDs (if fastqIDs look like: R1234567890-201-D-E03) (or leave/comment out, if just have CID):
 LibNum_split_Lin = df_lineages0['sample_id'].str.split("-")
@@ -158,29 +161,11 @@ df_QCsummary_UpdatedLineages_merge = pd.merge(df_QCsummary0, df_lineages0, how='
 #print(df_QCsummary_UpdatedLineages_merge) #works (46 columns, inc index)
 
 # Just Keep Columns you want from merged file:
+df_QCsummary_UpdatedLineages_merge3a = df_QCsummary_UpdatedLineages_merge[['UselessNumber', 'sample', 'run_name', 'num_consensus_snvs', 'num_consensus_n', 'num_consensus_iupac', 'num_variants_snvs', 'num_variants_indel', 'num_variants_indel_triplet', 'mean_sequencing_depth', 'median_sequencing_depth', 'qpcr_ct', 'collection_date', 'num_weeks', 'scaled_variants_snvs', 'genome_completeness_x', 'qc_pass_x', 'lineage', 'watch_mutations', 'watchlist_id', 'num_observed_mutations', 'num_mutations_in_watchlist', 'proportion_watchlist_mutations_observed', 'note_y', 'pangoLEARN_version_y', 'pct_N_bases', 'pct_covered_bases', 'longest_no_N_run', 'num_aligned_reads', 'qc_pass_y', 'sample_name', 'VariantYesNo', 'VariantType', 'LibraryNum', 'RunNum', 'SampleID_RunID', 'pangolin_version']]
 
-#from QC summary part of merged file
-merge1 = df_QCsummary_UpdatedLineages_merge.iloc[:, 0:17]
-#print(merge1)   #correct (Useless# - qc_pass_x)
-merge2 = df_QCsummary_UpdatedLineages_merge.iloc[:, 18:23]
-#print(merge2)    #correct (watch_mutns - propn_watchlist..)
-merge3 = df_QCsummary_UpdatedLineages_merge.iloc[:, 25:36]
-#print(merge3)   #correct (pct_N_bases - SampleID_RunID)
+# Format Coll Date column so output is like '2021-01-26' (with no time):
+df_QCsummary_UpdatedLineages_merge3['collection_date'] = pd.to_datetime(df_QCsummary_UpdatedLineages_merge3a['collection_date']).dt.date
 
-#from updated lineages part of merged file
-merge4 = df_QCsummary_UpdatedLineages_merge.iloc[:, 40:41]
-#print(merge4)   #correct (lineage)
-merge5 = df_QCsummary_UpdatedLineages_merge.iloc[:, 46:47]
-#print(merge5)   #correct (note_y)
-merge6 = df_QCsummary_UpdatedLineages_merge.iloc[:, 42:43]
-#print(merge6)   #correct (pangoLEARN_version_y)
-merge7 = df_QCsummary_UpdatedLineages_merge.iloc[:, 43:44]
-#print(merge7)   #correct (pangolin version)
-
-# Merge only the columns you want from each, into a new merged file:
-df_QCsummary_UpdatedLineages_merge2 = [merge1, merge4, merge2, merge5, merge6, merge3, merge7]
-df_QCsummary_UpdatedLineages_merge3 = pd.concat(df_QCsummary_UpdatedLineages_merge2, axis=1)
-#print(df_QCsummary_UpdatedLineages_merge3)
 
 # Sort by Run_Name (run_name column), then qc_pass_y (descending), then pct_covered_bases (Descending), then sample:
 df_QCsummary_UpdatedLineages_merge4 = df_QCsummary_UpdatedLineages_merge3.sort_values(['run_name', 'qc_pass_y', 'pct_covered_bases', 'sample'], ascending = (True, False, False, True))  
