@@ -13,7 +13,7 @@ The script will:
 (click on image to view in new window, then click to zoom, and scroll to see entire table)
 
 
-![image](https://user-images.githubusercontent.com/72042148/117081476-cd391500-acf4-11eb-9f3a-e26a31dc75f1.png)
+![image](https://user-images.githubusercontent.com/72042148/117406288-b8f64300-aec1-11eb-9446-003e1eb6cce5.png)
 
 (example data only, to show pangolin pipeline output)
 
@@ -64,7 +64,7 @@ https://github.com/BCCDC-PHL/pangolin-nf
 
 ## Do once: 
 
-Save the mergeQCresults_plusMissing.py (or _v5.py script) and addVoCcalls_RunNum_v2.py scripts somewhere on your server or unix PC.
+Save the mergeQCresults_plusMissing.py (or _v5b.py script) and addVoCcalls_RunNum_v2.py scripts somewhere on your server or unix PC.
 
 Save the LineageUpdater script on your PC. Install Anaconda Navigator. 
 
@@ -133,7 +133,7 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 ### Run LineageUpdater Script (on PC):
 
-1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up. (lines 28, 87, 274)
+1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up. (lines 28, 87, 259)
 
 2. <b>Launch Spyder</b>, or other IDE on your PC. 
 
