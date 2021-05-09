@@ -102,7 +102,8 @@ You may want to merge the output for multiple runs, to keep a file for all runs 
 
 3. <b>Remove the header rows</b> from all the files except the first: (replace both instances of "Runs1-145" below with whatever you used in your output file above)
 
-       header=$(head -n 1 Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv); (printf "%s\n" "$header"; grep -vFxe "$header" Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv) > Runs_CombinedQCsummary.csv
+       sed '2,${/LibraryNum/d;}' Runs1-145_combined_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv > Runs_CombinedQCsummary.csv
+
     
   You May also want to add a date to the beginning or end of the output file in the command above (e.g. Runs_CombinedQCsummary_[date].csv) 
 
