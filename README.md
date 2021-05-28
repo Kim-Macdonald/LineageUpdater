@@ -107,7 +107,7 @@ You may want to merge the output for multiple runs, to keep a file for all runs 
     
   You May also want to add a date to the beginning or end of the output file in the command above (e.g. Runs_CombinedQCsummary_[date].csv) 
 
-  (if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 28 with all these lines:) 
+  (if you add a date, you'll need to add a * to the LineageUpdater Script that reads in the Runs_CombinedQCsummary output file) (replace the line of code on line 27 with all these lines:) 
 
 ~~~python
 
@@ -135,7 +135,7 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 ### Run LineageUpdater Script (on PC):
 
-1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up. (lines 28, 87, 259)
+1. <b>Update paths</b> to files (Runs_CombinedQCsummary.xlsx and [date]_pangolin_lineages.csv and where you want your <b>output file</b> saved), in the script, as per your set-up. (lines 27, 86, 252)
 
 2. <b>Launch Spyder</b>, or other IDE on your PC. 
 
@@ -143,7 +143,7 @@ And produced an output file that looks like: [date]_pangolin_lineages.csv
 
 4. The file should appear in the folder you specified for saving (at end of LineageUpdater script).
 
-5. Use this file to report the newest lineages, summarize updated VoC/VUI data, trends, etc. 
+5. Use this file to report the newest lineages, summarize updated VoC/VOI data, trends, etc. 
 
   (e.g. link output file (or the folder it's in, to take the newest one each refresh) to a dashboard, to summarize data for reports, etc.
 
