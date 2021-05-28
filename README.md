@@ -64,7 +64,7 @@ https://github.com/BCCDC-PHL/pangolin-nf
 
 ## Do once: 
 
-Save the mergeQCresults_plusMissing.py (or _v5b.py script) and addVoCcalls_RunNum_v2.py scripts somewhere on your server or unix PC.
+Save the mergeQCresults_plusMissing.py (or _v5b.py script) and addVoCcalls_RunNum_v2.py (or _v2b.py) scripts somewhere on your server or unix PC.
 
 Save the LineageUpdater script on your PC. Install Anaconda Navigator. 
 
@@ -84,7 +84,7 @@ Save the LineageUpdater script on your PC. Install Anaconda Navigator.
 
     OR for artic v1.3 and ncov-tools v1.5 (and pangolin v2.4.2 output):
 
-    cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing_v5b.py; python3 path/to/addVoCcalls_RunNum_v2.py; conda deactivate
+    cd sequence/analysis/run/directory/[MiSeqRunID]; conda activate pandas; python3 path/to/mergeQCresults_plusMissing_v5b.py; python3 path/to/addVoCcalls_RunNum_v2b.py; conda deactivate
 
 The output file of interest is ([MiSeqRunID]_MissingPlus_QC_lineage_VoC_OrderedFinal_PlusVoCcalls.csv ).
 
